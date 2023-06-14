@@ -1,13 +1,14 @@
 package com.aws.spring.awstraining.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "emp")
 public class Employee {
     private String name;
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     public String getName() {
