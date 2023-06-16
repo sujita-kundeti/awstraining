@@ -6,24 +6,25 @@ pipeline {
     stages {
         stage("clean") {
         steps{
-               sh 'mvn clean'
+               sh 'mvn clean >>log.txt'
         }
         }
         stage("compile") {
         steps{
-              sh 'mvn compile'
+              sh 'mvn compile >>log.txt'
         }
         }
         stage("install"){
         steps{
-            sh 'mvn install'
+            sh 'mvn install >>log.txt'
         }
         }
     }
     post{
     always{
        // Archive build artifacts
-            archiveArtifacts 'target/*.jar' // Specify the file pattern for artifacts to be archived
+            archiveArtifacts 'target/*.jar'
+            archiveArtifacts 'log.txt'
     }
     }
 }
