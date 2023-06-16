@@ -14,5 +14,16 @@ pipeline {
               sh 'mvn compile'
         }
         }
+        stage("install"){
+        steps{
+            sh 'mvn install'
+        }
+        }
+    }
+    post{
+    always{
+       // Archive build artifacts
+            archiveArtifacts 'target/*.jar' // Specify the file pattern for artifacts to be archived
+    }
     }
 }
