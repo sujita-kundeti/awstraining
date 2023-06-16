@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage("clean") {
-        step{
+        steps{
             script{
                 echo 'This is my first step'
             }
