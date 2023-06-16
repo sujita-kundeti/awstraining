@@ -3,9 +3,12 @@ pipeline {
     stages {
         stage("clean") {
         steps{
-            script{
-                echo 'This is my first step'
-            }
+               sh 'mvn clean'
+        }
+        }
+        stage("compile") {
+        steps{
+              sh 'mvn compile'
         }
         }
     }
