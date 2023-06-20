@@ -14,11 +14,11 @@ pipeline {
               sh 'mvn compile >>log.txt'
         }
         }
-        stage("install"){
-        steps{
-            sh 'mvn install >>log.txt'
-        }
-        }
+//         stage("install"){
+//         steps{
+//             sh 'mvn install >>log.txt'
+//         }
+//         }
     }
     post{
     always{
