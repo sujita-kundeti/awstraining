@@ -23,7 +23,7 @@ pipeline {
     post{
     always{
        // Archive build artifacts
-            archiveArtifacts 'target/*.jar'
+//             archiveArtifacts 'target/*.jar'
             archiveArtifacts 'log.txt'
     }
     }
